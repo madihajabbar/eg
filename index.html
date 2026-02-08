@@ -731,6 +731,35 @@
             .cta-headline { font-size: 2.5rem; }
             .cta-visual { opacity: 0.1; right: -200px; }
         }
+
+        /* --- ANIMATION STYLES --- */
+        
+        /* 1. Hero Load Animation (Happens immediately) */
+        .hero-new h1, .hero-new p, .email-signup-wrapper {
+            animation: heroFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .hero-new h1 { animation-delay: 0.1s; }
+        .hero-new p { animation-delay: 0.3s; }
+        .email-signup-wrapper { animation-delay: 0.5s; }
+
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 2. Scroll Reveal Classes (Handled by JS) */
+        .scroll-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -1113,7 +1142,7 @@
 
         <section class="process-section">
             <span class="eyebrow" style="margin: 0 auto 16px;">Enterprise Solutions</span>
-            <h2 class="process-title">How we work with you</h2>
+            <h2 class="process-title">How We Work With You</h2>
             <p class="process-sub">Our Agent Engineering team provides ready-to-deploy AI Agents that integrate with your systems and deliver on key scenarios.</p>
 
             <div class="timeline-container">
@@ -1216,6 +1245,43 @@
                 const isActive = f.classList.contains('active');
                 features.forEach(i => i.classList.remove('active'));
                 if (!isActive) f.classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Select elements to animate (Sections, Cards, Headers, Footer)
+            // We exclude the hero because it has its own CSS animation
+            const targets = document.querySelectorAll("section:not(.hero-new), .card, .ship-card, .app-card, .timeline-step, .feature-item, footer, .cta-content");
+            
+            // 2. Add the hidden class immediately
+            targets.forEach(el => el.classList.add("scroll-hidden"));
+
+            // 3. Create the Observer to trigger animation when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("scroll-visible");
+                        observer.unobserve(entry.target); // Stop watching once animated
+                    }
+                });
+            }, {
+                threshold: 0.15, // Trigger when 15% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Offset slightly so it doesn't trigger too early
+            });
+
+            // 4. Start watching the elements
+            targets.forEach(el => observer.observe(el));
+
+            // 5. Add Staggered Delays to Grids (Cards appear one by one)
+            const grids = document.querySelectorAll('.grid-4, .ship-grid, .app-grid, .timeline-container');
+            grids.forEach(grid => {
+                const children = grid.children;
+                Array.from(children).forEach((child, index) => {
+                    // Adds a 100ms delay increase for each item in the row
+                    child.style.transitionDelay = `${index * 100}ms`; 
+                });
             });
         });
     </script>
