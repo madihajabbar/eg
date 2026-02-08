@@ -421,6 +421,164 @@
             .footer-cols { grid-template-columns: 1fr 1fr; }
             nav { display: none; }
         }
+
+        /* Security Section Styles */
+        .security-section {
+            padding: 120px 0;
+            border-top: 1px solid var(--border-subtle);
+            position: relative;
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .eyebrow {
+            color: var(--accent-blue);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .sec-title {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .sec-link {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            text-decoration: underline;
+            text-decoration-color: rgba(161, 161, 170, 0.5);
+            text-underline-offset: 4px;
+            margin-bottom: 60px;
+            display: inline-block;
+        }
+        .sec-link:hover { color: var(--text-main); text-decoration-color: var(--text-main); }
+
+        /* Accordion List */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-item {
+            border-top: 1px solid var(--border-subtle);
+            padding: 32px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:last-child { border-bottom: 1px solid var(--border-subtle); }
+
+        .feature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feature-num {
+            color: var(--accent-blue);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .feature-name {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-main);
+        }
+
+        .feature-desc {
+            height: 0;
+            overflow: hidden;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: height 0.3s ease, margin-top 0.3s ease;
+            max-width: 90%;
+        }
+
+        /* Active State for Item 02 (to match screenshot) */
+        .feature-item.active .feature-desc {
+            height: auto;
+            margin-top: 16px;
+        }
+        
+        .feature-arrow {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text-main);
+            transform: rotate(45deg); /* Arrow pointing up-right initially */
+            transition: transform 0.3s;
+        }
+
+        /* Visual Dashboard (Right Column) */
+        .dashboard-card {
+            background: #121214; /* Slightly lighter than body */
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5);
+        }
+
+        .chart-container {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .chart-label { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 20px; }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bar-wrapper { display: flex; align-items: center; gap: 12px; }
+        .bar-label { width: 30px; font-size: 0.75rem; color: var(--text-tertiary); font-family: var(--font-mono); }
+        
+        .bar {
+            height: 24px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .bar.blue { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); }
+        .bar.orange { background: rgba(251, 146, 60, 0.2); border: 1px solid rgba(251, 146, 60, 0.4); }
+
+        .qa-list { display: flex; flex-direction: column; gap: 12px; }
+        
+        .qa-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .qa-text { font-size: 0.8rem; color: var(--text-secondary); }
+        
+        .status-icon { width: 18px; height: 18px; }
+        .status-success { color: #22C55E; }
+        .status-warning { color: #F59E0B; }
+
+        @media (max-width: 1024px) {
+            .split-layout { grid-template-columns: 1fr; gap: 40px; }
+            .sec-title { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -529,6 +687,127 @@
                 <h2 style="font-size: 2.25rem; margin-bottom: 16px;">Loved by developers</h2>
                 <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Inkeep Agents can be customized visually or in code with full 2-way sync.</p>
             </div>
+
+            <section class="security-section">
+        <div class="container split-layout">
+            
+            <div class="security-content">
+                <span class="eyebrow">Security & Reporting</span>
+                <h2 class="sec-title">All the tools <br>to build confidence</h2>
+                <a href="#" class="sec-link">Visit our security center to learn more.</a>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div>
+                                <span class="feature-num">01</span>
+                                <h3 class="feature-name">Intelligent audits</h3>
+                            </div>
+                            <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="feature-item active">
+                        <div class="feature-header">
+                            <div>
+                                <span class="feature-num">02</span>
+                                <h3 class="feature-name">AI powered reporting</h3>
+                            </div>
+                            <svg class="feature-arrow" style="transform: rotate(90deg);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </div>
+                        <p class="feature-desc">
+                            Get insights on what users are asking, where there's missing content, and where Agents could use a hand.
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div>
+                                <span class="feature-num">03</span>
+                                <h3 class="feature-name">PII removal & data controls</h3>
+                            </div>
+                            <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <div>
+                                <span class="feature-num">04</span>
+                                <h3 class="feature-name">Authentication and permissions</h3>
+                            </div>
+                            <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security-visual">
+                <div class="dashboard-card">
+                    
+                    <div class="chart-container">
+                        <div class="chart-label">Performance</div>
+                        <div class="bar-chart">
+                            <div class="bar-wrapper">
+                                <span class="bar-label">0.29s</span>
+                                <div class="bar blue" style="width: 100%;"></div>
+                            </div>
+                            <div class="bar-wrapper">
+                                <span class="bar-label">0.25s</span>
+                                <div class="bar blue" style="width: 95%;"></div>
+                            </div>
+                            <div class="bar-wrapper">
+                                <span class="bar-label">0.22s</span>
+                                <div class="bar orange" style="width: 85%;"></div>
+                            </div>
+                            <div class="bar-wrapper">
+                                <span class="bar-label">0.18s</span>
+                                <div class="bar orange" style="width: 75%;"></div>
+                            </div>
+                            <div class="bar-wrapper">
+                                <span class="bar-label">0.13s</span>
+                                <div class="bar orange" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-list">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 4px;">
+                            <span>Question</span>
+                            <span>Answer rating</span>
+                        </div>
+                        
+                        <div class="qa-item">
+                            <span class="qa-text">How do I change the background colour...</span>
+                            <svg class="status-icon status-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        
+                        <div class="qa-item">
+                            <span class="qa-text">How do I add inkeep to my docs?</span>
+                            <svg class="status-icon status-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+
+                        <div class="qa-item">
+                            <span class="qa-text">I locked myself out of my account...</span>
+                            <svg class="status-icon status-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+
+                        <div class="qa-item">
+                            <span class="qa-text">I'm getting a 500 error when calling...</span>
+                            <svg class="status-icon status-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+
+                        <div class="qa-item">
+                            <span class="qa-text">Can I use Inkeep with Zendesk?</span>
+                            <svg class="status-icon status-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
 
             <div class="code-ui-wrapper">
                 <div class="window">
