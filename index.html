@@ -18,7 +18,8 @@
             --text-secondary: #52525B; /* Zinc 600 */
             --text-tertiary: #A1A1AA;
             
-            --accent-blue: #2563EB;
+            /* UPDATED BRAND BLUE (Brighter/Vibrant) */
+            --accent-blue: #3B82F6; 
             --accent-blue-light: #EFF6FF; 
             
             --border-subtle: #E4E4E7;
@@ -143,159 +144,159 @@
             font-size: 0.875rem; font-weight: 500; color: var(--text-main);
         }
 
-.btn-demo {
-    background: var(--accent-blue);
-    color: white;
-    height: 40px;
-    padding: 0 24px;
-    border-radius: 999px;
-    
-    /* Typography to match Hero Button */
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-}
+        .btn-demo {
+            background: var(--accent-blue);
+            color: white;
+            height: 40px;
+            padding: 0 24px;
+            border-radius: 999px;
+            
+            /* Typography to match Hero Button */
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
 
-.btn-demo:hover {
-    background: #1d4ed8; /* Darker blue on hover */
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
+        .btn-demo:hover {
+            background: #2563EB; /* Slightly darker on hover */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
 
-.btn-arrow { width: 14px; height: 14px; }
+        .btn-arrow { width: 14px; height: 14px; }
 
-/* --- NEW HERO SECTION --- */
-.hero-new {
-    padding: 180px 0 100px; /* More top padding for the new look */
-    text-align: center;
-    position: relative;
-}
+        /* --- NEW HERO SECTION --- */
+        .hero-new {
+            padding: 180px 0 100px; /* More top padding for the new look */
+            text-align: center;
+            position: relative;
+        }
 
-/* Thin Gradient Headline */
-.hero-headline-serif {
-    font-family: var(--font-sans); /* Use the old font */
-    font-weight: 300; /* Make it Thin */
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 32px;
-    letter-spacing: -0.04em;
-    
-    /* Gradient Text Effect */
-    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-}
+        /* Thin Gradient Headline */
+        .hero-headline-serif {
+            font-family: var(--font-sans); /* Use the old font */
+            font-weight: 300; /* Make it Thin */
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -0.04em;
+            
+            /* Gradient Text Effect */
+            background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
 
-/* Container for the underlined text */
-.scribble-container {
-    position: relative;
-    display: inline-block;
-    
-    /* Fix: Re-apply background so this text part isn't invisible */
-    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        /* Container for the underlined text */
+        .scribble-container {
+            position: relative;
+            display: inline-block;
+            
+            /* Fix: Re-apply background so this text part isn't invisible */
+            background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* The Blue Underline */
-.underline-svg {
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 14px;
-    overflow: visible;
-}
+        /* The Blue Underline */
+        .underline-svg {
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 14px;
+            overflow: visible;
+        }
 
-/* Force the line to be Blue (fixes invisibility) */
-.underline-svg path {
-    stroke: #3B82F6; 
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke-opacity: 0.8;
-}
+        /* Force the line to be Blue (fixes invisibility) */
+        .underline-svg path {
+            stroke: var(--accent-blue); 
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-opacity: 0.8;
+        }
 
-.hero-sub-text {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 680px;
-    margin: 0 auto 48px;
-    line-height: 1.6;
-    font-weight: 300;
-}
+        .hero-sub-text {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
 
-/* Email Input Form */
-.email-signup-wrapper {
-    position: relative;
-    max-width: 440px;
-    margin: 0 auto;
-}
+        /* Email Input Form */
+        .email-signup-wrapper {
+            position: relative;
+            max-width: 440px;
+            margin: 0 auto;
+        }
 
-.email-input {
-    width: 100%;
-    height: 54px;
-    padding: 0 130px 0 24px; /* Right padding makes room for button */
-    border-radius: 99px;
-    border: 1px solid var(--border-subtle);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--text-main);
-    background: #FFFFFF;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    outline: none;
-    transition: all 0.2s ease;
-}
+        .email-input {
+            width: 100%;
+            height: 54px;
+            padding: 0 130px 0 24px; /* Right padding makes room for button */
+            border-radius: 99px;
+            border: 1px solid var(--border-subtle);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            background: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            outline: none;
+            transition: all 0.2s ease;
+        }
 
-.email-input:focus {
-    border-color: var(--accent-blue);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-}
+        .email-input:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
 
-.email-input::placeholder {
-    color: #A1A1AA;
-}
+        .email-input::placeholder {
+            color: #A1A1AA;
+        }
 
-.btn-signup-pill {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    bottom: 5px;
-    background: var(--accent-blue);
-    color: white;
-    border: none;
-    border-radius: 99px;
-    padding: 0 18px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
+        .btn-signup-pill {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            border-radius: 99px;
+            padding: 0 18px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
-.btn-signup-pill:hover {
-    background: #1d4ed8;
-}
+        .btn-signup-pill:hover {
+            background: #2563EB;
+        }
 
-@media (max-width: 768px) {
-    .hero-headline-serif { font-size: 3rem; }
-    .email-signup-wrapper { width: 100%; }
-}
+        @media (max-width: 768px) {
+            .hero-headline-serif { font-size: 3rem; }
+            .email-signup-wrapper { width: 100%; }
+        }
 
 
         /* --- BENTO GRID --- */
@@ -344,128 +345,128 @@
         .token-string { color: #A3E635; }
 
         /* --- SHIP SECTION (4 Cards) --- */
-.ship-section {
-    padding: 120px 0;
-    text-align: center;
-}
+        .ship-section {
+            padding: 120px 0;
+            text-align: center;
+        }
 
-.ship-header-wrapper {
-    max-width: 800px;
-    margin: 0 auto 60px;
-    position: relative;
-}
+        .ship-header-wrapper {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            position: relative;
+        }
 
-.ship-sub {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 700px;
-    margin: 16px auto 0;
-    line-height: 1.6;
-}
+        .ship-sub {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
 
-/* Scribbly Arrow Position */
-.scribble-arrow {
-    position: absolute;
-    top: 0;
-    right: 80px;
-    width: 50px;
-    height: 50px;
-    opacity: 0.6;
-    color: #F59E0B; /* Orange tint like screenshot */
-    transform: rotate(10deg);
-}
+        /* Scribbly Arrow Position */
+        .scribble-arrow {
+            position: absolute;
+            top: 0;
+            right: 80px;
+            width: 50px;
+            height: 50px;
+            opacity: 0.6;
+            color: #F59E0B; /* Orange tint like screenshot */
+            transform: rotate(10deg);
+        }
 
-.ship-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    text-align: left;
-}
+        .ship-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: left;
+        }
 
-.ship-card {
-    border-radius: 20px;
-    padding: 32px 24px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid transparent; /* default */
-}
+        .ship-card {
+            border-radius: 20px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent; /* default */
+        }
 
-.ship-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-}
+        .ship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
 
-/* Card Variants */
-.bg-yellow { background-color: #FFFBEB; border-color: #FEF3C7; } /* Pale yellow */
-.bg-white { background-color: #FFFFFF; border: 1px solid var(--border-subtle); }
-.bg-purple { background-color: #FAF5FF; border-color: #F3E8FF; } /* Pale purple */
+        /* Card Variants */
+        .bg-yellow { background-color: #FFFBEB; border-color: #FEF3C7; } /* Pale yellow */
+        .bg-white { background-color: #FFFFFF; border: 1px solid var(--border-subtle); }
+        .bg-purple { background-color: #FAF5FF; border-color: #F3E8FF; } /* Pale purple */
 
-/* Typography inside cards */
-.ship-tag {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    display: block;
-    opacity: 0.8;
-}
+        /* Typography inside cards */
+        .ship-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: block;
+            opacity: 0.8;
+        }
 
-.ship-title {
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: var(--text-main);
-    margin-bottom: 16px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-}
+        .ship-title {
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
 
-.ship-desc-main {
-    font-size: 1.1rem;
-    color: var(--text-main);
-    margin-bottom: 16px;
-    line-height: 1.4;
-}
+        .ship-desc-main {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
 
-.ship-desc-sub {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 40px;
-    flex-grow: 1; /* Pushes icon/link to bottom */
-}
+        .ship-desc-sub {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            flex-grow: 1; /* Pushes icon/link to bottom */
+        }
 
-.ship-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 24px;
-    stroke-width: 1.5;
-    color: var(--text-main);
-    opacity: 0.8;
-}
+        .ship-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 24px;
+            stroke-width: 1.5;
+            color: var(--text-main);
+            opacity: 0.8;
+        }
 
-.ship-link {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-}
+        .ship-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
 
-@media (max-width: 1200px) {
-    .ship-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
-    .ship-grid { grid-template-columns: 1fr; }
-    .scribble-arrow { display: none; }
-}
+        @media (max-width: 1200px) {
+            .ship-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .ship-grid { grid-template-columns: 1fr; }
+            .scribble-arrow { display: none; }
+        }
 
 
         
@@ -525,10 +526,10 @@
         .process-title { font-size: 3rem; margin-bottom: 16px; }
         .process-sub { max-width: 600px; margin: 0 auto 80px; }
         /* Fix font inconsistency in the process section eyebrow */
-.process-section .eyebrow {
-    font-family: var(--font-mono);
-    text-align: center; /* Ensure it's centered */
-}
+        .process-section .eyebrow {
+            font-family: var(--font-mono);
+            text-align: center; /* Ensure it's centered */
+        }
         
         .timeline-container {
             display: flex; justify-content: space-between; position: relative;
@@ -777,36 +778,36 @@
 
         /* --- HOW WE WORK (Ship Style) --- */
 
-/* Reuse .ship-section, .ship-card, etc. from previous step */
+        /* Reuse .ship-section, .ship-card, etc. from previous step */
 
-/* 4-Column Grid for the 4 Steps */
-.ship-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    text-align: left;
-    max-width: 1240px;
-    margin: 0 auto;
-}
+        /* 4-Column Grid for the 4 Steps */
+        .ship-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: left;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
 
-/* Make sure the eyebrow uses the correct mono font */
-.ship-header-wrapper .eyebrow-styled {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-blue);
-    display: block;
-    margin-bottom: 16px;
-    font-weight: 600;
-}
+        /* Make sure the eyebrow uses the correct mono font */
+        .ship-header-wrapper .eyebrow-styled {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            display: block;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
 
-@media (max-width: 1200px) {
-    .ship-grid-4 { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 640px) {
-    .ship-grid-4 { grid-template-columns: 1fr; }
-}
+        @media (max-width: 1200px) {
+            .ship-grid-4 { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .ship-grid-4 { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -827,27 +828,26 @@
                 <div class="nav-item">Solutions <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
             </div>
 
-                <a href="#" class="btn-demo">
-                    GET A DEMO
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
+            <a href="#" class="btn-demo">
+                GET A DEMO
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </header>
 
     <main class="container">
         
-<section class="hero-new">
-<h1 class="hero-headline-serif">
-    AI Agents You Can Trust<br>
-    for 
-    <span class="scribble-container">
-        Customer Operations
-        <svg class="underline-svg" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
-            <path d="M4 12 Q 150 2 296 10" />
-        </svg>
-    </span>
-</h1>
+        <section class="hero-new">
+            <h1 class="hero-headline-serif">
+                AI Agents You Can Trust<br>
+                for 
+                <span class="scribble-container">
+                    Customer Operations
+                    <svg class="underline-svg" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+                        <path d="M4 12 Q 150 2 296 10" />
+                    </svg>
+                </span>
+            </h1>
             
             <p class="hero-sub-text">
                 A full-stack AI agent platform that empowers customer operations teams and developers to build agents that take action across your systems.
@@ -862,7 +862,7 @@
             </div>
         </section>
 
- <section class="security-section">
+        <section class="security-section">
             <div class="split-layout">
                 <div>
                     <span class="eyebrow">Services</span>
