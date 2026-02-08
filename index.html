@@ -257,6 +257,132 @@
         .token-keyword { color: #C084FC; }
         .token-string { color: #A3E635; }
 
+        /* --- SHIP SECTION (4 Cards) --- */
+.ship-section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.ship-header-wrapper {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.ship-sub {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 16px auto 0;
+    line-height: 1.6;
+}
+
+/* Scribbly Arrow Position */
+.scribble-arrow {
+    position: absolute;
+    top: 0;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.6;
+    color: #F59E0B; /* Orange tint like screenshot */
+    transform: rotate(10deg);
+}
+
+.ship-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.ship-card {
+    border-radius: 20px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent; /* default */
+}
+
+.ship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+/* Card Variants */
+.bg-yellow { background-color: #FFFBEB; border-color: #FEF3C7; } /* Pale yellow */
+.bg-white { background-color: #FFFFFF; border: 1px solid var(--border-subtle); }
+.bg-purple { background-color: #FAF5FF; border-color: #F3E8FF; } /* Pale purple */
+
+/* Typography inside cards */
+.ship-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.8;
+}
+
+.ship-title {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.ship-desc-main {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.ship-desc-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    flex-grow: 1; /* Pushes icon/link to bottom */
+}
+
+.ship-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 24px;
+    stroke-width: 1.5;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+.ship-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .ship-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .ship-grid { grid-template-columns: 1fr; }
+    .scribble-arrow { display: none; }
+}
+
+
+        
         /* --- SECURITY SECTION --- */
         .security-section { padding: 120px 0; border-top: 1px solid var(--border-subtle); }
         .split-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
@@ -672,6 +798,81 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="ship-section">
+            <div class="ship-header-wrapper">
+                <h2 style="font-size: 3rem; margin-bottom: 16px; position: relative; display: inline-block;">
+                    Ship AI Agents and tools.<br>
+                    Pre-built or fully custom
+                    <svg class="scribble-arrow" viewBox="0 0 50 50" fill="none" stroke="currentColor">
+                        <path d="M10 10 C 20 5, 40 10, 40 30 M 40 30 L 30 25 M 40 30 L 45 20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </h2>
+                <p class="ship-sub">
+                    Pre-built RAG 'Ask AI', enterprise search, support copilots for Zendesk and Intercom, and a platform to build custom Agents.
+                </p>
+            </div>
+
+            <div class="ship-grid">
+                
+                <div class="ship-card bg-yellow">
+                    <span class="ship-tag">DEFLECT</span>
+                    <h3 class="ship-title" style="color: #2563EB;">Ask AI</h3>
+                    <p class="ship-desc-main">Guide users to submit complex tickets, deflect Tier 1</p>
+                    <p class="ship-desc-sub">Customers ask questions on your site and get accurate answers from your docs, help center, and knowledge base — instantly.</p>
+                    
+                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    
+                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                </div>
+
+                <div class="ship-card bg-white">
+                    <span class="ship-tag">ENABLE</span>
+                    <h3 class="ship-title" style="color: #2563EB;">Copilots</h3>
+                    <p class="ship-desc-main">Enable teams to close Tier 2 and 3 tickets faster</p>
+                    <p class="ship-desc-sub">Your support team gets AI-suggested responses, relevant context, and draft replies pulled from your knowledge base — right inside Zendesk, Salesforce, or Intercom.</p>
+                    
+                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    
+                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                </div>
+
+                <div class="ship-card bg-white">
+                    <span class="ship-tag">AUTOMATE</span>
+                    <h3 class="ship-title" style="color: #2563EB;">Agentic Workflows</h3>
+                    <p class="ship-desc-main">Automate manual processes to save time</p>
+                    <p class="ship-desc-sub">When a support ticket closes, automatically update your docs. When a bug is reported, create a Linear ticket. Chain actions across tools.</p>
+                    
+                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    
+                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                </div>
+
+                <div class="ship-card bg-purple">
+                    <span class="ship-tag">CREATE</span>
+                    <h3 class="ship-title">Build Your Own</h3>
+                    <p class="ship-desc-main">Customize yours your own Agents for unique use cases</p>
+                    <p class="ship-desc-sub">Create custom Agents tailored to your own needs and use cases</p>
+                    
+                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color: #9333EA;">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    
+                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                </div>
+
             </div>
         </section>
 
