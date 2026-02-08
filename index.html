@@ -774,6 +774,39 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* --- HOW WE WORK (Ship Style) --- */
+
+/* Reuse .ship-section, .ship-card, etc. from previous step */
+
+/* 4-Column Grid for the 4 Steps */
+.ship-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: left;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Make sure the eyebrow uses the correct mono font */
+.ship-header-wrapper .eyebrow-styled {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .ship-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+    .ship-grid-4 { grid-template-columns: 1fr; }
+}
     </style>
 </head>
 <body>
@@ -859,76 +892,88 @@
             </div>
         </section>
 
-        <section class="ship-section">
+       <section class="ship-section">
             <div class="ship-header-wrapper">
-                <h2 style="font-size: 3rem; margin-bottom: 16px; position: relative; display: inline-block;">
-                    Ship AI Agents and tools.<br>
-                    Pre-built or fully custom
-                    <svg class="scribble-arrow" viewBox="0 0 50 50" fill="none" stroke="currentColor">
-                        <path d="M10 10 C 20 5, 40 10, 40 30 M 40 30 L 30 25 M 40 30 L 45 20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <span class="eyebrow-styled">ENTERPRISE SOLUTIONS</span>
+                <h2 style="font-size: 3rem; line-height:1.1; margin-bottom: 16px; position: relative; display: inline-block;">
+                    How We Work With You
                 </h2>
-                <p class="ship-sub">
-                    Pre-built RAG 'Ask AI', enterprise search, support copilots for Zendesk and Intercom, and a platform to build custom Agents.
+                <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Our Agent Engineering team provides ready-to-deploy AI Agents that integrate with your systems and deliver on key scenarios.
                 </p>
             </div>
 
-            <div class="ship-grid">
+            <div class="ship-grid-4">
                 
                 <div class="ship-card bg-yellow">
-                    <span class="ship-tag">DEFLECT</span>
-                    <h3 class="ship-title" style="color: #2563EB;">Ask AI</h3>
-                    <p class="ship-desc-main">Guide users to submit complex tickets, deflect Tier 1</p>
-                    <p class="ship-desc-sub">Customers ask questions on your site and get accurate answers from your docs, help center, and knowledge base — instantly.</p>
+                    <span class="ship-tag">PHASE 1</span>
+                    <h3 class="ship-title" style="color: #B45309;">Audit &<br>Discovery</h3>
+                    <p class="ship-desc">We analyze your current workflows and give Agents the right sources, apps, and APIs for their tasks.</p>
                     
-                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
+                    <div class="ship-illo">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M50 20 L20 35 L50 50 L80 35 Z" />
+                            <path d="M20 50 L50 65 L80 50" />
+                            <path d="M20 65 L50 80 L80 65" />
+                            <circle cx="50" cy="50" r="15" fill="#FEF3C7" stroke="none" opacity="0.5"/>
+                            <circle cx="50" cy="50" r="8" stroke="#F59E0B" />
+                            <line x1="56" y1="56" x2="62" y2="62" stroke="#F59E0B" stroke-width="2"/>
+                        </svg>
+                    </div>
                     
-                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                    <a class="ship-link">VIEW AUDIT PROCESS <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
                 </div>
 
                 <div class="ship-card bg-white">
-                    <span class="ship-tag">ENABLE</span>
-                    <h3 class="ship-title" style="color: #2563EB;">Copilots</h3>
-                    <p class="ship-desc-main">Enable teams to close Tier 2 and 3 tickets faster</p>
-                    <p class="ship-desc-sub">Your support team gets AI-suggested responses, relevant context, and draft replies pulled from your knowledge base — right inside Zendesk, Salesforce, or Intercom.</p>
+                    <span class="ship-tag">PHASE 2</span>
+                    <h3 class="ship-title" style="color: #2563EB;">Build &<br>Integration</h3>
+                    <p class="ship-desc">We build the system inside your existing tools or help you choose the right stack for seamless integration.</p>
                     
-                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                    <div class="ship-illo">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="25" y="30" width="20" height="20" rx="2" />
+                            <rect x="55" y="30" width="20" height="20" rx="2" />
+                            <rect x="40" y="60" width="20" height="20" rx="2" fill="#EFF6FF" stroke="#2563EB"/>
+                            <path d="M35 50 v5 h10" stroke-dasharray="2,2"/>
+                            <path d="M65 50 v5 h-10" stroke-dasharray="2,2"/>
+                        </svg>
+                    </div>
                     
-                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
-                </div>
-
-                <div class="ship-card bg-white">
-                    <span class="ship-tag">AUTOMATE</span>
-                    <h3 class="ship-title" style="color: #2563EB;">Agentic Workflows</h3>
-                    <p class="ship-desc-main">Automate manual processes to save time</p>
-                    <p class="ship-desc-sub">When a support ticket closes, automatically update your docs. When a bug is reported, create a Linear ticket. Chain actions across tools.</p>
-                    
-                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="8.5" cy="7" r="4"></circle>
-                        <line x1="20" y1="8" x2="20" y2="14"></line>
-                        <line x1="23" y1="11" x2="17" y2="11"></line>
-                    </svg>
-                    
-                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                    <a class="ship-link">VIEW INTEGRATIONS <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
                 </div>
 
                 <div class="ship-card bg-purple">
-                    <span class="ship-tag">CREATE</span>
-                    <h3 class="ship-title">Build Your Own</h3>
-                    <p class="ship-desc-main">Customize yours your own Agents for unique use cases</p>
-                    <p class="ship-desc-sub">Create custom Agents tailored to your own needs and use cases</p>
+                    <span class="ship-tag">PHASE 3</span>
+                    <h3 class="ship-title" style="color: #9333EA;">Launch &<br>Rollout</h3>
+                    <p class="ship-desc">We deploy agents to your customers or internal teams, ensuring a smooth transition and adoption.</p>
                     
-                    <svg class="ship-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color: #9333EA;">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                    </svg>
+                    <div class="ship-illo">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M50 20 L50 80" />
+                            <path d="M50 20 L30 40 M 50 20 L 70 40" />
+                            <circle cx="30" cy="80" r="3" fill="#9333EA" stroke="none"/>
+                            <circle cx="70" cy="80" r="3" fill="#9333EA" stroke="none"/>
+                            <path d="M20 80 h60" opacity="0.3"/>
+                        </svg>
+                    </div>
                     
-                    <a class="ship-link">LEARN MORE <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                    <a class="ship-link">DEPLOYMENT STRATEGY <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+                </div>
+
+                <div class="ship-card bg-white">
+                    <span class="ship-tag">PHASE 4</span>
+                    <h3 class="ship-title" style="color: #2563EB;">Monitor &<br>Improve</h3>
+                    <p class="ship-desc">We continuously monitor performance and improve agents with intelligent reporting and analytics.</p>
+                    
+                    <div class="ship-illo">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="20" y="25" width="60" height="50" rx="2" />
+                            <line x1="20" y1="40" x2="80" y2="40" opacity="0.3"/>
+                            <path d="M30 60 L45 50 L55 55 L70 45" stroke="#2563EB" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    
+                    <a class="ship-link">VIEW ANALYTICS <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
                 </div>
 
             </div>
