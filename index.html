@@ -161,38 +161,51 @@
     position: relative;
 }
 
+/* Thin Gradient Headline */
 .hero-headline-serif {
-    /* Revert to the main font (Inter) */
-    font-family: var(--font-sans); 
-    
-    /* Add the gradient effect */
-    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    /* Adjust size and weight to match the old look */
+    font-family: var(--font-sans); /* Use the old font */
+    font-weight: 300; /* Make it Thin */
     font-size: 4.5rem;
-    font-weight: 500;
     line-height: 1.1;
     margin-bottom: 32px;
     letter-spacing: -0.04em;
+    
+    /* Gradient Text Effect */
+    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* Container for the underlined text */
 .scribble-container {
     position: relative;
     display: inline-block;
+    
+    /* Fix: Re-apply background so this text part isn't invisible */
+    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* The blue underline svg */
+/* The Blue Underline */
 .underline-svg {
     position: absolute;
     bottom: -6px;
     left: 0;
     width: 100%;
     height: 14px;
-    color: #3B82F6;
     overflow: visible;
+}
+
+/* Force the line to be Blue (fixes invisibility) */
+.underline-svg path {
+    stroke: #3B82F6; 
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-opacity: 0.8;
 }
 
 .hero-sub-text {
@@ -756,16 +769,16 @@
     <main class="container">
         
 <section class="hero-new">
-            <h1 class="hero-headline-serif">
-                AI Agents You Can Trust<br>
-                for 
-                <span class="scribble-container">
-                    Customer Operations
-                    <svg class="underline-svg" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
-                        <path d="M4 12 Q 150 2 296 10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-opacity="0.8" />
-                    </svg>
-                </span>
-            </h1>
+<h1 class="hero-headline-serif">
+    AI Agents You Can Trust<br>
+    for 
+    <span class="scribble-container">
+        Customer Operations
+        <svg class="underline-svg" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+            <path d="M4 12 Q 150 2 296 10" />
+        </svg>
+    </span>
+</h1>
             
             <p class="hero-sub-text">
                 A full-stack AI agent platform that empowers customer operations teams and developers to build agents that take action across your systems.
