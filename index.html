@@ -476,33 +476,124 @@
 
 
         
-        /* --- SECURITY SECTION --- */
-        .security-section { padding: 120px 0; border-top: 1px solid var(--border-subtle); }
-        .split-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
-        
-        .eyebrow {
-            color: var(--accent-blue); font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; display: block;
-        }
-        .sec-title { font-size: 3rem; line-height: 1.1; margin-bottom: 24px; }
-        .sec-link {
-            color: var(--text-secondary); font-size: 1.125rem; text-decoration: underline;
-            text-decoration-color: var(--border-subtle); text-underline-offset: 4px;
-            margin-bottom: 60px; display: inline-block;
-        }
-        .sec-link:hover { color: var(--text-main); text-decoration-color: var(--text-main); }
+       /* --- NEW SERVICES SECTION (Split with Gradient Dots) --- */
+.services-new-section {
+    padding: 140px 0;
+    border-top: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+}
 
-        .feature-item { border-top: 1px solid var(--border-subtle); padding: 24px 0; cursor: pointer; }
-        .feature-item:last-child { border-bottom: 1px solid var(--border-subtle); }
-        .feature-num { color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 4px; display: block; font-weight: 600; }
-        .feature-name { font-size: 1.75rem; font-weight: 400; transition: color 0.2s; }
-        .feature-arrow { width: 24px; height: 24px; transition: transform 0.3s; stroke-width: 2; float: right; margin-top: 5px; }
-        .feature-desc {
-            height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;
-            font-size: 1rem; color: var(--text-secondary); margin-top: 0;
-        }
-        .feature-item.active .feature-desc { height: auto; opacity: 1; margin-top: 16px; }
-        .feature-item.active .feature-arrow { transform: rotate(90deg); stroke: var(--accent-blue); }
+.services-split-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Left slightly smaller than right */
+    gap: 80px;
+    align-items: start;
+}
+
+/* --- LEFT PANEL (Title & Dot Background) --- */
+.services-left-panel {
+    position: relative;
+    /* Ensure text sits above the dots */
+    z-index: 1;
+}
+
+/* The Gradient Dot Pattern */
+.dot-gradient-bg {
+    position: absolute;
+    top: -50px; /* Extend slightly above */
+    left: -50px; /* Extend slightly left */
+    width: 150%; /* Ensure coverage */
+    height: 150%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+    
+    /* Create the dots */
+    background-image: radial-gradient(var(--text-tertiary) 1px, transparent 1px);
+    background-size: 24px 24px; /* Spacing of dots */
+    
+    /* Create the gradient fade effect on the dots */
+    mask-image: radial-gradient(circle at top left, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at top left, black 0%, transparent 70%);
+}
+
+/* The specific monospace font style you asked for */
+.services-eyebrow-mono {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    margin-bottom: 24px;
+    display: block;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.services-new-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+.services-new-sub {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+/* --- RIGHT PANEL (The List) --- */
+.services-right-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-list-item {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    transition: all 0.3s ease;
+}
+/* Remove border from the last item */
+.service-list-item:last-child { border-bottom: none; }
+
+.service-list-num {
+    font-family: var(--font-mono);
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-top: 4px;
+}
+
+.service-list-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.service-list-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Subtle hover effect for list items */
+.service-list-item:hover .service-list-content h3 {
+    color: var(--accent-blue);
+}
+
+@media (max-width: 1024px) {
+    .services-split-container { grid-template-columns: 1fr; gap: 60px; }
+    .dot-gradient-bg { width: 100%; height: 100%; left: 0; top: 0; }
+}
 
         /* Dashboard Mockup */
         .dashboard-mockup {
@@ -931,32 +1022,61 @@
             </div>
         </section>
 
-        <section class="security-section">
-            <div class="split-layout">
-                <div>
-                    <span class="eyebrow">Services</span>
-                    <h2 class="sec-title">All the tools <br>to build confidence</h2>
-                    <div class="feature-item active"><span class="feature-num">01</span><h3 class="feature-name">AI Receptionists</h3><svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg><p class="feature-desc">Instant replies, booking, and lead handling across web, SMS, and messaging platforms — ensuring no lead is ever missed.</p></div>
-                    <div class="feature-item active"><span class="feature-num">02</span><h3 class="feature-name">Lead Qualification</h3><svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg><p class="feature-desc">Automatically score, tag, and route leads based on intent, readiness, and behavior.</p></div>
-                    <div class="feature-item active"><span class="feature-num">03</span><h3 class="feature-name">CRM Automation</h3><svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg><p class="feature-desc">Every interaction synced to your CRM in real time — clean data with zero manual entry.</p></div>
-                    <div class="feature-item active"><span class="feature-num">04</span><h3 class="feature-name">Internal AI Agents</h3><svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg><p class="feature-desc">AI agents handle reporting, summaries, task creation, and internal workflows automatically.</p></div>
-                    <div class="feature-item active"><span class="feature-num">05</span><h3 class="feature-name">End-toEnd Automation</h3><svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg><p class="feature-desc">All tools, data, and AI systems connected into one continuous, self-maintaining workflow.</p></div>
-
+   <section class="services-new-section">
+            <div class="services-split-container">
+                
+                <div class="services-left-panel">
+                    <div class="dot-gradient-bg"></div>
+                    
+                    <span class="services-eyebrow-mono">Services</span>
+                    <h2 class="services-new-title">All the tools <br>to build confidence</h2>
+                    <p class="services-new-sub">
+                        Everything you need to automate your workflow, qualify leads, and scale your operations without adding headcount.
+                    </p>
                 </div>
-                <div class="dashboard-mockup">
-                    <div style="font-size: 0.8rem; margin-bottom: 20px;">Performance</div>
-                    <div class="chart-bars">
-                        <div class="chart-bar-bg"><div class="chart-fill fill-blue" style="width: 100%"></div></div>
-                        <div class="chart-bar-bg"><div class="chart-fill fill-blue" style="width: 95%"></div></div>
-                        <div class="chart-bar-bg"><div class="chart-fill fill-orange" style="width: 85%"></div></div>
-                        <div class="chart-bar-bg"><div class="chart-fill fill-orange" style="width: 70%"></div></div>
+
+                <div class="services-right-list">
+                    
+                    <div class="service-list-item">
+                        <span class="service-list-num">01</span>
+                        <div class="service-list-content">
+                            <h3>AI Receptionists</h3>
+                            <p>Instant replies, booking, and lead handling across web, SMS, and messaging platforms — ensuring no lead is ever missed.</p>
+                        </div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A1A1AA; margin-bottom:10px;"><span>Question</span><span>Answer rating</span></div>
-                    <div class="check-list">
-                        <div class="check-item"><span>How do I change the background...</span><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.2"/><path d="M9 12l2 2 4-4"/></svg></div>
-                        <div class="check-item"><span>How do I add inkeep to my docs?</span><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.2"/><path d="M9 12l2 2 4-4"/></svg></div>
-                        <div class="check-item"><span>I locked myself out of my account...</span><svg class="icon-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+
+                    <div class="service-list-item">
+                        <span class="service-list-num">02</span>
+                        <div class="service-list-content">
+                            <h3>Lead Qualification</h3>
+                            <p>Automatically score, tag, and route leads based on intent, readiness, and behavior.</p>
+                        </div>
                     </div>
+
+                    <div class="service-list-item">
+                        <span class="service-list-num">03</span>
+                        <div class="service-list-content">
+                            <h3>CRM Automation</h3>
+                            <p>Every interaction synced to your CRM in real time — clean data with zero manual entry.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-list-item">
+                        <span class="service-list-num">04</span>
+                        <div class="service-list-content">
+                            <h3>Internal AI Agents</h3>
+                            <p>AI agents handle reporting, summaries, task creation, and internal workflows automatically.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-list-item">
+                        <span class="service-list-num">05</span>
+                        <div class="service-list-content">
+                            <h3>End-to-End Automation</h3>
+                            <p>All tools, data, and AI systems connected into one continuous, self-maintaining workflow.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
