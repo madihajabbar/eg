@@ -470,57 +470,147 @@
 
 
         
-        /* --- SECURITY SECTION --- */
-        .security-section { padding: 120px 0; border-top: 1px solid var(--border-subtle); }
-        .split-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
-        
-        .eyebrow {
-            color: var(--accent-blue); font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; display: block;
-        }
-        .sec-title { font-size: 3rem; line-height: 1.1; margin-bottom: 24px; }
-        .sec-link {
-            color: var(--text-secondary); font-size: 1.125rem; text-decoration: underline;
-            text-decoration-color: var(--border-subtle); text-underline-offset: 4px;
-            margin-bottom: 60px; display: inline-block;
-        }
-        .sec-link:hover { color: var(--text-main); text-decoration-color: var(--text-main); }
-
-        .feature-item { border-top: 1px solid var(--border-subtle); padding: 24px 0; cursor: pointer; }
-        .feature-item:last-child { border-bottom: 1px solid var(--border-subtle); }
-        .feature-num { color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 4px; display: block; font-weight: 600; }
-        .feature-name { font-size: 1.75rem; font-weight: 400; transition: color 0.2s; }
-        .feature-arrow { width: 24px; height: 24px; transition: transform 0.3s; stroke-width: 2; float: right; margin-top: 5px; }
-        .feature-desc {
-            height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease;
-            font-size: 1rem; color: var(--text-secondary); margin-top: 0;
-        }
-        .feature-item.active .feature-desc { height: auto; opacity: 1; margin-top: 16px; }
-        .feature-item.active .feature-arrow { transform: rotate(90deg); stroke: var(--accent-blue); }
-
-      /* Dashboard Mockup Container */
-.dashboard-mockup {
-    background: #F4F4F5;
-    border-radius: 24px;
-    /* Removed padding so image fills the container */
-    padding: 0; 
-    border: 1px solid var(--border-subtle);
-    /* Ensure image stays within rounded corners */
-    overflow: hidden; 
+/* --- SERVICES SECTION (Sticky Layout + Dots) --- */
+.services-section {
+    padding: 140px 0;
     position: relative;
-    /* Fixed height to prevent jumping during image swap */
-    height: 500px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-top: 1px solid var(--border-subtle);
+    background-color: #FBFBF9; /* Ensure bg is opaque for the dots */
+    overflow: hidden;
 }
 
-/* The Dynamic Image itself */
-#dynamic-feature-image {
+/* The Abstract Dot Pattern */
+.dot-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills space without stretching */
-    transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+    /* Creates a subtle grey dot every 24px */
+    background-image: radial-gradient(#E4E4E7 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.services-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr; /* Left is smaller, Right is wider */
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Side: Sticky Header */
+.services-header {
+    position: sticky;
+    top: 140px; /* Sticks to top of screen when scrolling */
+    height: fit-content;
+    text-align: left;
+}
+
+.services-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.services-title {
+    font-family: var(--font-sans);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.services-sub {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+/* Right Side: The List */
+.services-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item {
+    border-top: 1px solid var(--border-subtle);
+    padding: 40px 0;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.service-item:last-child {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.service-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin-right: 16px;
+}
+
+.service-name {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text-main);
+    transition: color 0.2s ease;
+}
+
+.service-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 90%;
+    margin-left: auto; /* Pushes text to align with title, skipping number */
+    padding-left: 30px; /* Rough alignment with title */
+}
+
+/* Hover Effect */
+.service-item:hover .service-name {
+    color: var(--accent-blue);
+}
+
+.service-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--border-hover);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    color: var(--accent-blue);
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .services-container { grid-template-columns: 1fr; gap: 40px; }
+    .services-header { position: relative; top: 0; margin-bottom: 40px; }
+    .services-title { font-size: 2.5rem; }
+    .service-desc { padding-left: 0; margin-left: 0; max-width: 100%; }
 }
 
 /* A class we will toggle with JS for smoother fading */
@@ -956,53 +1046,79 @@
             </div>
         </section>
 
-   <section class="security-section">
-    <div class="split-layout">
-        <div>
-            <span class="eyebrow">Services</span>
-            <h2 class="sec-title">All the tools <br>to build confidence</h2>
-            
-            <div class="feature-item active" data-image="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop">
-                <span class="feature-num">01</span>
-                <h3 class="feature-name">AI Receptionists</h3>
-                <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                <p class="feature-desc">Instant replies, booking, and lead handling across web, SMS, and messaging platforms — ensuring no lead is ever missed.</p>
-            </div>
+<section class="services-section">
+            <div class="dot-pattern"></div>
 
-            <div class="feature-item" data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop">
-                <span class="feature-num">02</span>
-                <h3 class="feature-name">Lead Qualification</h3>
-                <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                <p class="feature-desc">Automatically score, tag, and route leads based on intent, readiness, and behavior.</p>
-            </div>
+            <div class="services-container">
+                
+                <div class="services-header">
+                    <span class="services-eyebrow">Services</span>
+                    <h2 class="services-title">All the tools <br>to build confidence</h2>
+                    <p class="services-sub">
+                        Everything you need to automate your workflow, qualify leads, and scale your operations without adding headcount.
+                    </p>
+                </div>
 
-            <div class="feature-item" data-image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop">
-                <span class="feature-num">03</span>
-                <h3 class="feature-name">CRM Automation</h3>
-                <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                <p class="feature-desc">Every interaction synced to your CRM in real time — clean data with zero manual entry.</p>
-            </div>
+                <div class="services-list">
+                    
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div>
+                                <span class="service-num">01</span>
+                                <span class="service-name">AI Receptionists</span>
+                            </div>
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                        <p class="service-desc">Instant replies, booking, and lead handling across web, SMS, and messaging platforms — ensuring no lead is ever missed.</p>
+                    </div>
 
-            <div class="feature-item" data-image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop">
-                <span class="feature-num">04</span>
-                <h3 class="feature-name">Internal AI Agents</h3>
-                <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                <p class="feature-desc">AI agents handle reporting, summaries, task creation, and internal workflows automatically.</p>
-            </div>
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div>
+                                <span class="service-num">02</span>
+                                <span class="service-name">Lead Qualification</span>
+                            </div>
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                        <p class="service-desc">Automatically score, tag, and route leads based on intent, readiness, and behavior. We filter the noise so you focus on the sales.</p>
+                    </div>
 
-            <div class="feature-item" data-image="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000&auto=format&fit=crop">
-                <span class="feature-num">05</span>
-                <h3 class="feature-name">End-to-End Automation</h3>
-                <svg class="feature-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                <p class="feature-desc">All tools, data, and AI systems connected into one continuous, self-maintaining workflow.</p>
-            </div>
-        </div>
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div>
+                                <span class="service-num">03</span>
+                                <span class="service-name">CRM Automation</span>
+                            </div>
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                        <p class="service-desc">Every interaction synced to your CRM in real time. We ensure clean data with zero manual entry, keeping your pipeline up to date.</p>
+                    </div>
 
-        <div class="dashboard-mockup">
-            <img id="dynamic-feature-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop" alt="Feature Preview">
-        </div>
-    </div>
-</section>
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div>
+                                <span class="service-num">04</span>
+                                <span class="service-name">Internal AI Agents</span>
+                            </div>
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                        <p class="service-desc">AI agents handle reporting, summaries, task creation, and internal workflows automatically, freeing your team from admin work.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div>
+                                <span class="service-num">05</span>
+                                <span class="service-name">End-to-End Automation</span>
+                            </div>
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                        <p class="service-desc">We connect all your tools, data, and AI systems into one continuous, self-maintaining workflow that operates 24/7.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
          
       <section class="app-section">
