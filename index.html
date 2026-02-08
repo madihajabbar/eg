@@ -297,15 +297,6 @@
     .email-signup-wrapper { width: 100%; }
 }
 
-        /* Trusted By */
-        .trusted-label {
-            font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--text-tertiary); margin-bottom: 32px; display: block;
-        }
-        .logos {
-            display: flex; justify-content: center; gap: 48px;
-            opacity: 0.6; filter: grayscale(100%);
-        }
 
         /* --- BENTO GRID --- */
         .grid-4 {
@@ -533,6 +524,11 @@
         .process-section { padding: 120px 0; text-align: center; position: relative; }
         .process-title { font-size: 3rem; margin-bottom: 16px; }
         .process-sub { max-width: 600px; margin: 0 auto 80px; }
+        /* Fix font inconsistency in the process section eyebrow */
+.process-section .eyebrow {
+    font-family: var(--font-mono);
+    text-align: center; /* Ensure it's centered */
+}
         
         .timeline-container {
             display: flex; justify-content: space-between; position: relative;
@@ -793,9 +789,9 @@
             </a>
             
             <div class="nav-links">
-                <div class="nav-item">Services ↗<svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-                <div class="nav-item">Problems ↗<svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-                <div class="nav-item">Solutions ↗<svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="nav-item">Services <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="nav-item">Problems <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="nav-item">Solutions <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
             </div>
 
                 <a href="#" class="btn-demo">
@@ -1063,46 +1059,72 @@
             </div>
         </section>
 
-        <section class="process-section">
+<section class="process-section">
             <span class="eyebrow" style="margin: 0 auto 16px;">Enterprise Solutions</span>
             <h2 class="process-title">How We Work With You</h2>
             <p class="process-sub">Our Agent Engineering team provides ready-to-deploy AI Agents that integrate with your systems and deliver on key scenarios.</p>
 
             <div class="timeline-container">
                 <div class="timeline-line"></div>
+                
                 <div class="timeline-step">
                     <div class="step-icon-box">
                         <div class="step-number">1</div>
-                        <svg class="step-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
                     </div>
                     <h3 class="step-title">Audit</h3>
                     <p class="step-desc">Give Agents the right sources, apps and APIs for their tasks.</p>
                 </div>
+
                 <div class="timeline-step">
                     <div class="step-icon-box">
                         <div class="step-number">2</div>
-                        <svg class="step-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4M17.5 10v4"/></svg>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="5" width="8" height="8" rx="1" />
+                            <rect x="14" y="11" width="8" height="8" rx="1" />
+                            <path d="M10 9h4a2 2 0 0 1 2 2v1" />
+                            <circle cx="18" cy="15" r="2" />
+                            <circle cx="6" cy="9" r="2" />
+                        </svg>
                     </div>
-                    <h3 class="step-title">Build & Intergration</h3>
+                    <h3 class="step-title">Build & Integration</h3>
                     <p class="step-desc">The system inside your existing tools or help you choose the right stack.</p>
                 </div>
+
                 <div class="timeline-step">
                     <div class="step-icon-box">
                         <div class="step-number">3</div>
-                        <svg class="step-icon" viewBox="0 0 24 24"><path d="M6 3v18M6 9a9 9 0 019 9v3"/><circle cx="6" cy="3" r="1.5"/><circle cx="15" cy="21" r="1.5"/><circle cx="6" cy="21" r="1.5"/></svg>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <path d="M6 3v18M6 9a9 9 0 0 1 9 9v3"/>
+                             <circle cx="6" cy="3" r="2" fill="currentColor"/>
+                             <circle cx="6" cy="21" r="2" fill="currentColor"/>
+                             <circle cx="15" cy="21" r="2" fill="currentColor"/>
+                        </svg>
                     </div>
                     <h3 class="step-title">Rollout</h3>
                     <p class="step-desc">Deploy agents to your customers or internal teams.</p>
                 </div>
+
                 <div class="timeline-step">
                     <div class="step-icon-box">
                         <div class="step-number">4</div>
-                        <svg class="step-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 7h20M6 17v-4M10 17v-6M14 17v-2"/></svg>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                            <line x1="8" y1="10" x2="8" y2="20"/>
+                            <path d="M14 15l3-3 3 3"/>
+                        </svg>
                     </div>
                     <h3 class="step-title">Monitor & Improve</h3>
                     <p class="step-desc">Monitor and improve agents with intelligent reporting.</p>
                 </div>
             </div>
+
+            </section>
 
             <a href="#" class="ent-btn">Enterprise Platform <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </section>
@@ -1147,7 +1169,7 @@
                 </div>
             </div>
             <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between;">
-                <span>&copy; 2026 Inkeep</span>
+                <span>&copy; 2026 Inoflow</span>
             </div>
         </div>
     </footer>
