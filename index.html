@@ -808,6 +808,59 @@
         @media (max-width: 640px) {
             .ship-grid-4 { grid-template-columns: 1fr; }
         }
+
+        /* --- CTA SECTION (Hero Style) --- */
+.cta-section {
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(180deg, #FBFBF9 0%, #FFFFFF 100%);
+    text-align: center; /* Center align everything */
+}
+
+.cta-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-headline {
+    /* HERO FONT STYLES */
+    font-family: var(--font-sans);
+    font-weight: 300; /* Thin weight like hero */
+    font-size: 4.5rem; /* Large impact */
+    line-height: 1.1;
+    margin-bottom: 40px;
+    letter-spacing: -0.04em;
+    
+    /* Gradient Text Effect */
+    background: linear-gradient(180deg, #18181B 0%, #52525B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.cta-sub {
+    font-size: 2rem;
+    color: var(--text-tertiary);
+    font-weight: 300;
+    display: block;
+    margin-top: 10px;
+    /* Remove gradient for the subtext to keep it subtle */
+    -webkit-text-fill-color: initial; 
+}
+
+@media (max-width: 768px) {
+    .cta-headline { font-size: 2.5rem; }
+    .cta-sub { font-size: 1.5rem; }
+}
     </style>
 </head>
 <body>
@@ -1104,34 +1157,21 @@
         </section>
 
     
-   
-        <section class="cta-section">
+   <section class="cta-section">
             <div class="cta-container">
-                <div class="cta-content">
-                    <h2 class="cta-headline">
-                        Empower your teams and users. Build AI Agents you can trust.
-                        <span style="color: var(--text-tertiary);">...with or without code.</span>
-                    </h2>
-                    
-                    <a href="#" class="ent-btn" style="margin-top: 0;">
-                        GET A DEMO
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-
-                <div class="cta-visual">
-                    <svg viewBox="0 0 500 500" width="100%" height="100%">
-                        <defs>
-                            <linearGradient id="softBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.5" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M150 50 L400 50 L480 250 L400 450 L150 450 L70 250 Z" fill="url(#softBlue)" />
-                        <circle cx="350" cy="250" r="180" fill="#FFFFFF" fill-opacity="0.6" />
-                    </svg>
-                </div>
+                <h2 class="cta-headline">
+                    Let us empower your<br>teams and users.<br>
+                    We build AI Agents you can trust.
+                    <span class="cta-sub">...customized for your business.</span>
+                </h2>
+                
+                <a href="#" class="ent-btn" style="margin-top: 20px;">
+                    GET A DEMO
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
+            
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255,255,255,0) 70%); pointer-events: none; z-index: 1;"></div>
         </section>
 
     </main>
