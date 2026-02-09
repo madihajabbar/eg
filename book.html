@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inoflow - Schedule a Strategy Session</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #FBFBF9;
+            --text-main: #18181B;
+            --text-secondary: #52525B;
+            --accent-purple: #8B5CF6; /* Your Inoflow Purple */
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 80px 24px;
+        }
+
+        .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        p.subheadline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .booking-container { grid-template-columns: 1fr; gap: 40px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="booking-container">
+        <div class="content-side">
+            <span class="eyebrow">Strategy Session</span>
+            <h1>Schedule a call</h1>
+            <p class="subheadline">
+                Find a time with our Automation team to see how Inoflow can transform your front desk operations and scale your revenue.
+            </p>
+            
+            <div style="margin-top: 60px; opacity: 0.6;">
+                <p style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 20px;">Trusted by growing businesses</p>
+                </div>
+        </div>
+
+        <div class="calendly-side">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/inoflowagency/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=8b5cf6" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+    </main>
+
+</body>
+</html>
