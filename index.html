@@ -522,22 +522,25 @@
 }
 
 /* The specific monospace font style you asked for */
-.services-eyebrow-mono {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent-blue);
-    margin-bottom: 24px;
-    display: block;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-weight: 600;
+/* Update your Services title to match the Problems title */
+.services-title-large {
+    font-family: var(--font-sans); /* Inter */
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-main);
 }
 
-.services-new-title {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: var(--text-main);
+/* Update your Services label to match the blue "PROBLEMS WE SOLVE" tag */
+.services-eyebrow-mono {
+    font-family: var(--font-mono); /* JetBrains Mono */
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+}
 }
 
 .services-new-sub {
@@ -1029,7 +1032,7 @@
                     <div class="dot-gradient-bg"></div>
                     
                     <span class="services-eyebrow-mono">Services</span>
-                    <h2 class="services-new-title">All the tools <br>to build confidence</h2>
+                    <h2 class="services-title-large">All the tools to <span class="section-header-underline">build confidence</span></h2>
                     <p class="services-new-sub">
                         Everything you need to automate your workflow, qualify leads, and scale your operations without adding headcount.
                     </p>
